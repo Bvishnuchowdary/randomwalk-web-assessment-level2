@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trendy Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="game-title">Tic Tac Toe</h1>
+
+    <div class="player-setup">
+      <h2>Player Setup</h2>
+      <label for="player1-name">Player 1 Name:</label>
+      <input type="text" id="player1-name" placeholder="Enter Player 1's Name">
+      
+      <label for="player1-choice">Player 1, Choose X or O:</label>
+      <select id="player1-choice">
+        <option value="X">X</option>
+        <option value="O">O</option>
+      </select>
+      
+      <label for="player2-name">Player 2 Name:</label>
+      <input type="text" id="player2-name" placeholder="Enter Player 2's Name" >
+      
+      <button id="start-game">Start Game</button>
+    </div>
+
+    <div class="game-container hidden">
+      <h2 id="game-status">Player 1's Turn</h2>
+      <div class="grid-container">
+        <div class="grid">
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="winner-message" class="hidden">
+      <h2 id="winner-text" class="winner-text"></h2>
+      <button id="restart-game">Play Again</button>
+    </div>
+
+    <div class="scoreboard hidden" >
+      <h2>Scoreboard</h2>
+      <p id="player1-score">Player 1: <span>0</span></p>
+      <p id="player2-score">Player 2: <span>0</span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
