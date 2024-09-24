@@ -49,6 +49,8 @@ startGameButton.addEventListener('click', () => {
   gameContainer.classList.remove('hidden');
   document.querySelector('.scoreboard').classList.remove('hidden');
   document.querySelector('.theme-selector').classList.remove('hidden');
+  document.getElementById('reset-game').classList.remove('hidden');;
+
   updateGameStatus();
 });
 
@@ -105,6 +107,7 @@ function displayWinner(winner) {
   winnerText.textContent = `${winner} Wins!`;
   winnerMessage.classList.remove('hidden');
   gameContainer.classList.add('hidden');
+  document.getElementById('reset-game').classList.add('hidden');
   winnerText.classList.add('congrats-animation');
 
   if (winner === player1) {
@@ -120,6 +123,7 @@ function displayDraw() {
   winnerText.textContent = "It's a Draw!";
   winnerMessage.classList.remove('hidden');
   gameContainer.classList.add('hidden');
+  document.getElementById('reset-game').classList.add('hidden');
   winnerText.classList.add('congrats-animation');
 }
 
@@ -135,6 +139,7 @@ function resetGame() {
 
   winnerMessage.classList.add('hidden');
   gameContainer.classList.remove('hidden');
+  document.getElementById('reset-game').classList.remove('hidden');
   updateGameStatus();
 }
 
@@ -161,6 +166,7 @@ function newGame() {
 
   document.querySelector('.scoreboard').classList.add('hidden');
   document.querySelector('.theme-selector').classList.add('hidden');
+  document.getElementById('reset-game').classList.add('hidden');
   player1Score=0;
   player2Score=0;
 
@@ -171,3 +177,23 @@ function newGame() {
 }
 
 
+const themeSelect = document.getElementById('theme-select');
+const container = document.querySelector('.container');
+
+themeSelect.addEventListener('change', () => {
+  const selectedTheme = themeSelect.value;
+  
+  // Remove any previously applied theme class
+  container.classList.remove('default-theme', 'space-theme', 'nature-theme', 'retro-theme');
+  
+  // Apply the selected theme class
+  if (selectedTheme === 'space') {
+    container.classList.add('space-theme');
+  } else if (selectedTheme === 'nature') {
+    container.classList.add('nature-theme');
+  } else if (selectedTheme === 'retro') {
+    container.classList.add('retro-theme');
+  } else {
+    container.classList.add('default-theme');
+  }
+});
