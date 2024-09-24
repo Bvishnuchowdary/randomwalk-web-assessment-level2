@@ -10,8 +10,13 @@
 <body>
   <div class="container">
     <!-- Main title of the game -->
+    
     <div class="header">
-      <h1 class="game-title">Tic Tac Toe</h1>
+      
+      <div style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">
+        <h1  style="margin: 0; color: #ffcc00;">Tic Tac Toe</h1>
+      </div>
+      
       <!-- Board Theme selection  -->
     <div class="theme-selector hidden">
       <label for="theme-select">Board theme</label>
@@ -84,9 +89,16 @@
     <div class="scoreboard hidden">
       <h2>Scoreboard</h2>
       <!-- Score for Player 1 -->
-      <p id="player1-score">Player 1: <span>0</span></p>
+      <div style="display: flex; align-items: center; gap: 10px; justify-content: center;">
+        <h2 id="player1-label" style="margin: 0; padding: 0;">Player 1 :</h2>
+        <p id="player1-score" style="margin: 0; padding: 0;"><span>0</span></p>
+      </div>
+      
       <!-- Score for Player 2 -->
-      <p id="player2-score">Player 2: <span>0</span></p>
+      <div style="display: flex; align-items: center; gap: 10px; justify-content: center;">
+        <h2 id="player2-label" style="margin: 0; padding: 0;">Player 2 :</h2>
+        <p id="player2-score" style="margin: 0; padding: 0;"><span>0</span></p>
+      </div>
     </div>
     
   </div>

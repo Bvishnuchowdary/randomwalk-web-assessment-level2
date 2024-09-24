@@ -13,6 +13,11 @@ const resetGameButton = document.getElementById('reset-game');
 const player1ScoreDisplay = document.getElementById('player1-score').querySelector('span');
 const player2ScoreDisplay = document.getElementById('player2-score').querySelector('span');
 
+// Load the sound files
+const clickSound = new Audio('sounds/move.wav');
+const winSound = new Audio('sounds/win.wav');
+const drawSound = new Audio('sounds/draw.mp3');
+const resetSound = new Audio('sounds/reset.wav');
 // Initialize variables for the game
 let player1 = '';
 let player2 = '';
@@ -42,6 +47,7 @@ startGameButton.addEventListener('click', () => {
   player1 = player1NameInput.value;
   player1Choice = player1ChoiceInput.value;
   player2 = player2NameInput.value;
+  resetSound.play();
 
   // Check if both player names are filled
   if (!player1 || !player2) {
@@ -67,7 +73,8 @@ startGameButton.addEventListener('click', () => {
   document.querySelector('.scoreboard').classList.remove('hidden');
   document.querySelector('.theme-selector').classList.remove('hidden');
   document.getElementById('reset-game').classList.remove('hidden');
-
+  document.getElementById('player1-label').innerHTML=`${player1} :`;
+  document.getElementById('player2-label').innerHTML=`${player2} :`;
   // Update game status with the current player's turn
   updateGameStatus();
 });
@@ -76,7 +83,7 @@ startGameButton.addEventListener('click', () => {
 cells.forEach(cell => {
   cell.addEventListener('click', () => {
     const cellIndex = Array.from(cells).indexOf(cell); // Get the index of the clicked cell
-
+    clickSound.play();
     // If cell is already filled or game is over, do nothing
     if (board[cellIndex] !== '' || !gameActive) return;
 
@@ -133,6 +140,7 @@ function checkDraw() {
 
 // Display the winner message and update score
 function displayWinner(winner) {
+  winSound.play();
   winnerText.textContent = `${winner} Wins!`;
   winnerMessage.classList.remove('hidden');
   gameContainer.classList.add('hidden');
@@ -151,6 +159,7 @@ function displayWinner(winner) {
 
 // Display draw message
 function displayDraw() {
+  drawSound.play();
   winnerText.textContent = "It's a Draw!";
   winnerMessage.classList.remove('hidden');
   gameContainer.classList.add('hidden');
@@ -160,6 +169,7 @@ function displayDraw() {
 
 // Reset the game board but keep scores and players
 function resetGame() {
+  resetSound.play();
   board = ['', '', '', '', '', '', '', '', '']; // Clear board
   gameActive = true; // Reactivate the game
   currentPlayer = player1Choice === 'X' ? player1 : player2; // Set the current player
@@ -177,6 +187,7 @@ function resetGame() {
 
 // Reset everything for a new game, including scores and player names
 function newGame() {
+  resetSound.play();
   board = ['', '', '', '', '', '', '', '', ''];
   gameActive = true;
   currentPlayer = player1Choice === 'X' ? player1 : player2;
@@ -195,7 +206,8 @@ function newGame() {
   document.getElementById('player2-score').querySelector('span').textContent = '0';
   document.getElementById('player1-name').value = '';
   document.getElementById('player2-name').value = '';
-
+  document.getElementById('player1-label').innerHTML= "player1 :";
+  document.getElementById('player2-label').innerHTML= "player2 :";
   document.querySelector('.scoreboard').classList.add('hidden');
   document.querySelector('.theme-selector').classList.add('hidden');
   document.getElementById('reset-game').classList.add('hidden');
