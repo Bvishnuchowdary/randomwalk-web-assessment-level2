@@ -6,7 +6,8 @@ This is a simple yet visually appealing Tic Tac Toe game built using HTML, CSS, 
 ## Demo Video
 You can see a demonstration of the game below:
 
-<iframe width="600" height="400" src="https://drive.google.com/file/d/1QcuAAeREbD2tPUC_0y5jZ6ZuvvAc_dzV/preview?usp=drive_link" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="600" height="400" src="https://drive.google.com/file/d/1QcuAAeREbD2tPUC_0y5jZ6ZuvvAc_dzV/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Features
 - **Player Input:** Both players can enter their names before starting the game.
