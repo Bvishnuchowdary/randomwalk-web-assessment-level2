@@ -4,33 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trendy Tic Tac Toe</title>
+  <!-- Linking the external CSS file for styling -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
+    <!-- Main title of the game -->
     <h1 class="game-title">Tic Tac Toe</h1>
 
+    <!-- Section where players can input their names and choose X or O -->
     <div class="player-setup">
-      <h2>Player Setup</h2>
+      <h2>Player Setup</h2> <br>
+      <!-- Player 1 name input field -->
       <label for="player1-name">Player 1 Name:</label>
       <input type="text" id="player1-name" placeholder="Enter Player 1's Name">
       
+      <!-- Player 1 choice dropdown to select between X or O -->
       <label for="player1-choice">Player 1, Choose X or O:</label>
       <select id="player1-choice">
         <option value="X">X</option>
         <option value="O">O</option>
       </select>
       
+      <!-- Player 2 name input field -->
       <label for="player2-name">Player 2 Name:</label>
       <input type="text" id="player2-name" placeholder="Enter Player 2's Name" >
       
+      <!-- Button to start the game after players enter details -->
       <button id="start-game">Start Game</button>
     </div>
 
+    <!-- Game board area, hidden by default until the game starts -->
     <div class="game-container hidden">
+      <!-- Displays which player's turn it is -->
       <h2 id="game-status">Player 1's Turn</h2>
+
+      <!-- Grid layout for the 3x3 Tic Tac Toe game board -->
       <div class="grid-container">
         <div class="grid">
+          <!-- Each cell in the Tic Tac Toe grid, with a data-cell attribute to track the cell -->
           <div class="cell" data-cell></div>
           <div class="cell" data-cell></div>
           <div class="cell" data-cell></div>
@@ -44,18 +56,25 @@
       </div>
     </div>
 
+    <!-- Winner message section, hidden by default until a winner is determined -->
     <div id="winner-message" class="hidden">
+      <!-- Displays the winner or if it's a draw -->
       <h2 id="winner-text" class="winner-text"></h2>
+      <!-- Button to restart the game after it ends -->
       <button id="restart-game">Play Again</button>
     </div>
 
-    <div class="scoreboard hidden" >
+    <!-- Scoreboard section to keep track of both players' scores -->
+    <div class="scoreboard hidden">
       <h2>Scoreboard</h2>
+      <!-- Score for Player 1 -->
       <p id="player1-score">Player 1: <span>0</span></p>
+      <!-- Score for Player 2 -->
       <p id="player2-score">Player 2: <span>0</span></p>
     </div>
   </div>
 
+  <!-- Linking the external JavaScript file for game functionality -->
   <script src="script.js"></script>
 </body>
 </html>
