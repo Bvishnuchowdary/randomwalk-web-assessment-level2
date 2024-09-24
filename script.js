@@ -173,6 +173,8 @@ function newGame() {
   const themeSelect = document.getElementById('theme-select');
   if (themeSelect) {
     themeSelect.value = 'default';
+    container.classList.remove('default-theme', 'space-theme', 'nature-theme', 'retro-theme');
+    
   }
 }
 
