@@ -41,6 +41,10 @@ startGameButton.addEventListener('click', () => {
     alert('Both player names must be filled!');
     return;
   }
+  if(player1===player2){
+    alert('Both player names must be different!');
+    return;
+  }
 
   player2Choice = player1Choice === 'X' ? 'O' : 'X';
   currentPlayer = player1Choice === 'X' ? player1 : player2;
