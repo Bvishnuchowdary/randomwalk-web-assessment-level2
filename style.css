@@ -30,6 +30,7 @@ body {
   margin-bottom: 20px;
   color: #ffcc00;
   text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+  padding-left : 100px
 }
 
 .player-setup {
@@ -169,4 +170,91 @@ button:hover {
 @keyframes winner-glow {
   0% { transform: scale(1); color: #ffffff; }
   100% { transform: scale(1.1); color: #ffcc00; }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.theme-selector {
+  position: absolute; 
+  top: -33px; 
+  right: -20px; 
+  width: 25%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Default Theme */
+.default-theme .container {
+  background-color: #1a1a1a;
+}
+
+.default-theme .grid {
+  background-color: #333;
+}
+
+/* Space Theme */
+.space-theme .container {
+  background-color: #000;
+  background-image: url('space-bg.jpg');
+  background-size: cover;
+}
+
+.space-theme .cell {
+  background-color: #222;
+  border-color: #00ffcc;
+}
+
+.space-theme .cell[data-cell="X"] {
+  color: #00ffcc;
+}
+
+.space-theme .cell[data-cell="O"] {
+  color: #ff4c4c;
+}
+
+/* Nature Theme */
+.nature-theme .container {
+  background-color: #228B22;
+  background-image: url('nature-bg.jpg');
+  background-size: cover;
+}
+
+
+.nature-theme .cell {
+  background-color: #556b2f;
+  border-color: #2e8b57;
+}
+
+.nature-theme .cell[data-cell="X"] {
+  color: #f0e68c;
+}
+
+.nature-theme .cell[data-cell="O"] {
+  color: #6b8e23;
+}
+
+/* Retro Theme */
+.retro-theme .container {
+  background-color: #ffcc00;
+  background-image: url('retro-bg.jpg');
+  background-size: cover;
+}
+
+.retro-theme .cell {
+  background-color: #f08080;
+  border-color: #d2691e;
+}
+
+.retro-theme .cell[data-cell="X"] {
+  color: #ff4500;
+}
+
+.retro-theme .cell[data-cell="O"] {
+  color: #00ced1;
 }

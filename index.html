@@ -10,7 +10,19 @@
 <body>
   <div class="container">
     <!-- Main title of the game -->
-    <h1 class="game-title">Tic Tac Toe</h1>
+    <div class="header">
+      <h1 class="game-title">Tic Tac Toe</h1>
+
+    <div class="theme-selector hidden">
+      <label for="theme-select">Board theme</label>
+      <select id="theme-select" >
+        <option value="default">🎨</option>
+        <option value="space">🚀</option>
+        <option value="nature">🌿</option>
+        <option value="retro">🕹️</option>
+      </select>
+    </div>
+    </div>
 
     <!-- Section where players can input their names and choose X or O -->
     <div class="player-setup">
@@ -53,6 +65,8 @@
           <div class="cell" data-cell></div>
           <div class="cell" data-cell></div>
         </div>
+
+        
       </div>
     </div>
 
@@ -62,6 +76,8 @@
       <h2 id="winner-text" class="winner-text"></h2>
       <!-- Button to restart the game after it ends -->
       <button id="restart-game">Play Again</button>
+      <br><br>
+      <button id="reset-game">Restart Game</button>
     </div>
 
     <!-- Scoreboard section to keep track of both players' scores -->
@@ -72,7 +88,12 @@
       <!-- Score for Player 2 -->
       <p id="player2-score">Player 2: <span>0</span></p>
     </div>
+    
   </div>
+
+
+  
+  
 
   <!-- Linking the external JavaScript file for game functionality -->
   <script src="script.js"></script>
